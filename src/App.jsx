@@ -1,10 +1,11 @@
-import { Button } from "antd";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Button type="primary">Button</Button>
-    </>
+    <Routes>
+      <Route element={<Home />} path="/" />
+    </Routes>
   );
 }
 
