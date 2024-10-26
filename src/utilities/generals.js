@@ -25,3 +25,25 @@ export function groupToolsByCategory(toolList) {
   // Return an array of grouped tools
   return Object.values(groupedTools);
 }
+
+export function filterDataByKeysAndString(dataList, keys, searchString) {
+  const searchPattern = new RegExp(`\\b${searchString}\\b`, "i"); // regex to match whole words, case-insensitive
+
+  return dataList.filter((item) => {
+    return keys.some((key) => {
+      if (item[key]) {
+        return searchPattern.test(item[key]);
+      }
+      return false;
+    });
+  });
+}
+
+export function openUrl(url, openInNewTab = true) {
+  if (!url) return;
+  if (openInNewTab) {
+    window.open(url, "_blank", "noopener,noreferrer");
+  } else {
+    window.location.href = url;
+  }
+}

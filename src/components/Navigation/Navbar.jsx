@@ -1,10 +1,13 @@
 import { AppBar, Stack, Toolbar, Typography } from "@mui/material";
 
-import { NAVIGATIONS } from "../../constant/navigations";
+import { NAVIGATIONS } from "../../constants/navigations";
 import ToolNavigation from "./ToolNavigation";
 import NavigationButton from "./NavigationButton";
+import { SITE_NAME } from "../../constants/siteConstant";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   return (
     <AppBar
       position="fixed"
@@ -23,11 +26,12 @@ export default function Navbar() {
           sx={{
             cursor: "pointer",
             "&:hover": {
-              color: "#f65858",
+              color: "#eaecee",
             },
           }}
+          onClick={() => navigate("/")}
         >
-          Easy Find
+          {SITE_NAME}
         </Typography>
 
         <Stack

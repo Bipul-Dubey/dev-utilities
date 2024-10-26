@@ -1,12 +1,12 @@
 import { Autocomplete, Button, Stack, TextField } from "@mui/material";
 import { ArrowRight } from "phosphor-react";
 import { useState } from "react";
-import { FILE_TYPE_ALLOWED } from "./files-to-base64";
 import { base64ToFile } from "../../utilities/files_utils";
 import Page from "../../components/common/Page";
 import HeadingSubheading from "../../components/common/HeadingSubheading";
 import TypingEffectTextarea from "../../components/tool-component/TextAreaCopy";
 import FileViewer from "../../components/Tools/FileRenderer";
+import { FILE_TYPE_ALLOWED } from "../../constants/fileTypes";
 
 export default function Base64ToFiles() {
   const [base64String, setBase64String] = useState("");

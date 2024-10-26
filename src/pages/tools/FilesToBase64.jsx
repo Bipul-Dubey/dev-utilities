@@ -8,26 +8,18 @@ import {
 } from "@mui/material";
 import { ArrowRight, Trash } from "phosphor-react";
 import { useState } from "react";
-import { DETAILED_FILE_TYPES } from "../../constant/fileTypes";
 import {
   convertImageToBase64,
   formatFileName,
 } from "../../utilities/files_utils";
 import Page from "../../components/common/Page";
 import HeadingSubheading from "../../components/common/HeadingSubheading";
-import FileUpload from "../../components/common/fileUpload";
+import FileUpload from "../../components/common/FileUpload";
 import FileViewer from "../../components/Tools/FileRenderer";
 import TypingEffectTextarea from "../../components/tool-component/TextAreaCopy";
+import { FILE_TYPE_ALLOWED } from "../../constants/fileTypes";
 
-const FILE_TYPE_ALLOWED = [
-  ...DETAILED_FILE_TYPES.audio.list,
-  ...DETAILED_FILE_TYPES.image.list,
-  ...DETAILED_FILE_TYPES.video.list,
-  DETAILED_FILE_TYPES.document.documents.PDF,
-  DETAILED_FILE_TYPES.document.documents.TXT,
-];
-
-export default function ImageToBase64() {
+export default function FilesToBase64() {
   const [fileDetails, setFileDetails] = useState(null);
   const [file, setFile] = useState(null);
   const [convertError, setConvertError] = useState(null);

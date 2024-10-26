@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Box, Typography, CircularProgress } from "@mui/material";
 import { UploadSimple } from "phosphor-react";
 import PropTypes from "prop-types";
-import { ALLOWED_FILE_TYPE } from "../../constant/fileTypes";
-
-FileUpload.propTypes = {
-  allowedTypes: PropTypes.array,
-  onFileUpload: PropTypes.func,
-};
+import { ALLOWED_FILE_TYPE } from "../../constants/fileTypes";
 
 const FileUpload = ({ allowedTypes = ["*"], onFileUpload }) => {
   const [loading, setLoading] = useState(false);
@@ -147,6 +142,11 @@ const FileUpload = ({ allowedTypes = ["*"], onFileUpload }) => {
       )}
     </Box>
   );
+};
+
+FileUpload.propTypes = {
+  allowedTypes: PropTypes.array,
+  onFileUpload: PropTypes.func,
 };
 
 export default FileUpload;

@@ -9,11 +9,6 @@ import { DownloadSimple } from "phosphor-react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-FileViewer.propTypes = {
-  file: PropTypes.object,
-  downloadable: PropTypes.bool,
-};
-
 const FileViewer = ({ file, downloadable = false }) => {
   const { name, type } = file;
   const [isLoading, setIsLoading] = useState(false); // Track loading state
@@ -144,6 +139,11 @@ const FileViewer = ({ file, downloadable = false }) => {
       )}
     </Stack>
   );
+};
+
+FileViewer.propTypes = {
+  file: PropTypes.object,
+  downloadable: PropTypes.bool,
 };
 
 export default FileViewer;

@@ -4,14 +4,6 @@ import { Copy } from "phosphor-react";
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 
-TypingEffectTextarea.propTypes = {
-  originalText: PropTypes.string,
-  timeDelay: PropTypes.number,
-  typingEffect: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  onChange: PropTypes.func,
-};
-
 const TypingEffectTextarea = ({
   originalText = "",
   timeDelay = 10,
@@ -113,6 +105,14 @@ const TypingEffectTextarea = ({
       )}
     </Box>
   );
+};
+
+TypingEffectTextarea.propTypes = {
+  originalText: PropTypes.string,
+  timeDelay: PropTypes.number,
+  typingEffect: PropTypes.bool,
+  readOnly: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 export default TypingEffectTextarea;
